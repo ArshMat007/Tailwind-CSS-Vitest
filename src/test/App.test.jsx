@@ -2,12 +2,12 @@ import { render, screen, within } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import App from '../App.jsx';
 
-// Following the “one assertion per test” principle
+//  “one assertion per test” principle
 describe('App', () => {
 
   it('renders without crashing and includes all imported components', () => {
     render(<App />); 
-    const mainElement = screen.getByRole('main');
+    const mainElement = screen.getByRole('main'); //looks for an element with the role "main"
     expect(mainElement).toBeInTheDocument();
   });
 

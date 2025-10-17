@@ -6,8 +6,8 @@ import {describe, it, expect} from "vitest";
 describe("useCounter custom hook", () => {
 
     
-  it("should initialize with default value", () => {  //mounting hook in a fake component and checking what it returns
-    const { result } = renderHook(() => useCounter());
+  it("should initialize with default value", () => {  
+    const { result } = renderHook(() => useCounter()); //mounting hook in a fake component and checking what it returns
     expect(result.current.count).toBe(0);
   });
   
