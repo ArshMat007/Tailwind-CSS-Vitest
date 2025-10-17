@@ -8,6 +8,6 @@ export default defineConfig({
   test: {
     globals: true,        // allows using test(), expect() without imports
     environment: 'jsdom', // simulates browser DOM
-    
+    setupFiles: './setupTests.js'
   },
 });

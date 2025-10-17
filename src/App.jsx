@@ -1,10 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ExampleComponent from './components/ExampleComponent'
 import NoteFlowchart from './components/FlowChart'
 import PricingStats from './components/PricingStats'
+import CounterDemo from './components/CounterDemo'
 
 function App() {
   return (
@@ -12,8 +10,10 @@ function App() {
       
       <main className='p-4 space-y-8'>
         <ExampleComponent />
+        <CounterDemo />
         <NoteFlowchart />
         <PricingStats />
+        
       </main>
     </div>
   );
