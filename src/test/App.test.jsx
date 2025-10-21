@@ -27,4 +27,5 @@ describe('App', () => {
     const { getByText } = within(main);
     expect(getByText('Pro')).toBeInTheDocument();
   });
+  
 });
