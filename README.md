@@ -6,13 +6,17 @@ A modern React application built with Vite, featuring custom components, Tailwin
 
 - **React 19**: Latest React with hooks and modern features.
 - **Vite**: Fast build tool with Hot Module Replacement (HMR) for development.
+- **React Query**: For efficient data fetching and state management (e.g., API calls).
 - **Custom Components**:
   - `ExampleComponent`: A sample component for demonstration.
   - `FlowChart` (NoteFlowchart): Displays a flowchart/note visualization.
   - `PricingStats`: Shows pricing-related statistics.
+  - `LoginForm`: A login form with username/password inputs, validation, and API-based authentication using a dummy API (https://dummyjson.com/auth/login).
+  - `CounterDemo`: A demo component for counter functionality.
+- **API Integration**: Includes a login API utility (`src/api/login.js`) for handling authentication requests.
 - **Tailwind CSS**: Utility-first CSS framework for responsive, custom styling.
 - **ESLint**: Configured for code quality and consistency.
-- **Testing with Vitest**: Unit and integration tests using Vitest, integrated with Vite for speed.
+- **Testing with Vitest**: Unit and integration tests using Vitest, integrated with Vite for speed. Includes tests for form validation, API mocking, and component behavior.
 
 ## Getting Started
 
@@ -60,13 +64,17 @@ npm run test:ui
 my-vite-app/
 ├── public/
 │   └── vite.svg
-├── src/
+├── src/      
 │   ├── assets/
 │   │   └── react.svg
 │   ├── components/
+│   │   ├── CounterDemo.jsx
 │   │   ├── ExampleComponent.jsx
 │   │   ├── FlowChart.jsx
+│   │   ├── LoginForm.jsx
 │   │   └── PricingStats.jsx
+│   ├── hooks/
+│   │   └── useCounter.jsx
 │   ├── App.jsx
 │   ├── App.css
 │   ├── index.css
@@ -75,7 +83,9 @@ my-vite-app/
 │       ├── App.test.jsx
 │       ├── example.test.jsx
 │       ├── FlowChart.test.jsx
-│       └── PricingStats.test.jsx
+│       ├── LoginForm.test.jsx
+│       ├── PricingStats.test.jsx
+│       └── useCounter.test.jsx
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
@@ -90,7 +100,7 @@ This project uses Tailwind CSS for styling. Configuration is in `tailwind.config
 
 ## Testing
 
-Tests are written with Vitest and Testing Library for user-centric component testing. Test files are colocated with components (e.g., `App.test.jsx`). Global setup is in `src/test/setup.js`.
+Tests are written with Vitest and Testing Library for user-centric component testing. Test files are colocated with components (e.g., `App.test.jsx`, `LoginForm.test.jsx`). Includes async testing for API interactions with mocked fetch calls. Global setup is in `setupTests.js`.
 
 ## React Compiler
 
