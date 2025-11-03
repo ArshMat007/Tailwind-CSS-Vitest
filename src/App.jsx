@@ -5,16 +5,17 @@ import PricingStats from './components/PricingStats'
 import CounterDemo from './components/CounterDemo'
 import LoginForm from './components/LoginForm'
 
+
 function App() {
   return (
     <div className="App">
       
-      <main className='p-4 space-y-8'>
+      <main className='  p-4 space-y-8'>
         <ExampleComponent />
         <LoginForm />
+        <PricingStats />
         <CounterDemo />
         <NoteFlowchart />
-        <PricingStats />
         
       </main>
     </div>

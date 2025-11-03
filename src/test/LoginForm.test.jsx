@@ -50,5 +50,16 @@ describe("Testing form validation", () => {
 
     });
 
+    it("Handel network error", async () => {
+        //Mock the fetch API to simulate a network error
+        vi.spyOn(global, "fetch").mockRejectedValueOnce(Error("Netwrok Error"));
+        render(<LoginForm />);
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: "user" } });
+        fireEvent.change(screen.getByLabelText(/password/i), {target: {value: "pass"}});
 
+        fireEvent.click(screen.getByRole('button', {name: /login/i}));
+        expect(await screen.findByText(/Something went wrong. Try again!/i)).toBeInTheDocument();
+    });
+
+    
 });
